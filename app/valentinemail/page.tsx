@@ -110,12 +110,13 @@ export default function ValentineMail() {
             src: "https://media.discordapp.net/attachments/1283830529933840507/1338767853590941696/66.webp?ex=67ac4839&is=67aaf6b9&hm=bf7f16eda4843667d35c49a415b79628874fc5f25d40a87145023d4504a2e9bb&=&format=webp&width=526&height=302",
             title: "Card Title",
             description: "A card component has a figure, a body part, and inside body there are title and actions parts",
-            imageItem : "https://media.discordapp.net/attachments/1283830529933840507/1338767853590941696/66.webp?ex=67ac4839&is=67aaf6b9&hm=bf7f16eda4843667d35c49a415b79628874fc5f25d40a87145023d4504a2e9bb&=&format=webp",
+            imageItem : "https://media.discordapp.net/attachments/1283830529933840507/1338767853590941696/66.webp?ex=67ac4839&is=67aaf6b9&hm=bf7f16eda4843667d35c49a415b79628874fc5f25d40a87145023d4504a2e9bb&=&format=webp&width=726&height=702",
           },
           {
-            src: "https://media.discordapp.net/attachments/1283830529933840507/1338767853590941696/66.webp?ex=67ac4839&is=67aaf6b9&hm=bf7f16eda4843667d35c49a415b79628874fc5f25d40a87145023d4504a2e9bb&=&format=webp&width=526&height=302",
+            src: "https://media.discordapp.net/attachments/1283830529933840507/1338071236034691092/3.webp?ex=67abb9b2&is=67aa6832&hm=d520a5abb0e154db9081aecd0cec458beea6dde7ef4224b381d16dd973748d15&=&format=webp&width=526&height=302",
             title: "Card Title",
-            description: "A card component has a figure, a body part, and inside body there are title and actions parts"
+            description: "A card component has a figure, a body part, and inside body there are title and actions parts",
+            imageItem : "https://media.discordapp.net/attachments/1283830529933840507/1338071236034691092/3.webp?ex=67abb9b2&is=67aa6832&hm=d520a5abb0e154db9081aecd0cec458beea6dde7ef4224b381d16dd973748d15&=&format=webp&width=726&height=702"
           }
         ].map((item, index) => (
           <div key={index} className="card bg-base-100 w-96 shadow-sm">
@@ -129,7 +130,7 @@ export default function ValentineMail() {
                   modal.className = 'modal';
                   modal.innerHTML = `
                     <div class="modal-box max-w-4xl">
-                      <img src="${e.currentTarget.src}" alt="Full size" class="w-full h-auto"/>
+                      <img src="${e.currentTarget.src}" alt="Full size" class="w-full h-auto w-xl"/>
                       <div class="modal-action">
                         <form method="dialog">
                           <button class="btn">Close</button>
@@ -156,7 +157,7 @@ export default function ValentineMail() {
                     img.className = 'modal';
                     img.innerHTML = `
                       <div class="modal-box max-w-4xl flex flex-col items-center">
-                        <img src="${item.imageItem}" alt="Full size" class="w-full h-auto"/>
+                        <img src="${item.imageItem}" alt="Full size"/>
                         <div class="modal-action">
                           <form method="dialog">
                             <button class="btn">Close</button>
