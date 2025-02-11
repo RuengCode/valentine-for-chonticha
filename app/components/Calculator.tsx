@@ -15,9 +15,16 @@ const showAlertฺ = (
     error: "alert-error"
   };
 
+  const alertIcon = {
+    info: `<svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>`,
+    success: `<svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>`,
+    warning: `<svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>`,
+    error: `<svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>`
+  };
+
   alertDiv.className = `alert ${alertClass[type]} m-4 opacity-0 transition-opacity duration-500`;
   alertDiv.innerHTML = `
-    <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+    ${alertIcon[type]}
     <span>${message}</span>
   `;
 
@@ -47,15 +54,14 @@ const Calculator = () => {
   const handleEqualClick = () => {
     const result = input;
     setInput(result.toString());
-    console.log(result.toString());
     console.log(result);
     if (result === "1") {
-      showAlertฺ("ถูกต้อง", "success");
+      showAlertฺ("คุณเก่งที่สุดเลยคุณป้อน", "success");
       setTimeout(() => {
         window.location.href = "valentinemail";
       }, 3000);
     } else {
-      showAlertฺ("XXXXX", "error");
+      showAlertฺ("ทำไมตอบผิด จำกันไม่ได้เเล้วสินะ", "error");
     }
   };
 
@@ -89,21 +95,21 @@ const Calculator = () => {
         <div className="grid grid-cols-3 gap-3">
         <button
           className="btn btn-outline btn-primary motion-safe:hover:scale-110"
-          onClick={() => handleNumberClick("7")}
+          onClick={() => handleNumberClick("1")}
         >
-          7
+          1
         </button>
         <button
           className="btn btn-outline btn-primary motion-safe:hover:scale-110"
-          onClick={() => handleNumberClick("8")}
+          onClick={() => handleNumberClick("2")}
         >
-          8
+          2
         </button>
         <button
           className="btn btn-outline btn-primary motion-safe:hover:scale-110"
-          onClick={() => handleNumberClick("9")}
+          onClick={() => handleNumberClick("3")}
         >
-          9
+          3
         </button>
         <button
           className="btn btn-outline btn-primary motion-safe:hover:scale-110"
@@ -125,21 +131,21 @@ const Calculator = () => {
         </button>
         <button
           className="btn btn-outline btn-primary motion-safe:hover:scale-110"
-          onClick={() => handleNumberClick("1")}
+          onClick={() => handleNumberClick("7")}
         >
-          1
+          7
         </button>
         <button
           className="btn btn-outline btn-primary motion-safe:hover:scale-110"
-          onClick={() => handleNumberClick("2")}
+          onClick={() => handleNumberClick("8")}
         >
-          2
+          8
         </button>
         <button
           className="btn btn-outline btn-primary motion-safe:hover:scale-110"
-          onClick={() => handleNumberClick("3")}
+          onClick={() => handleNumberClick("9")}
         >
-          3
+          9
         </button>
         <button
           className="btn btn-outline btn-primary motion-safe:hover:scale-110"

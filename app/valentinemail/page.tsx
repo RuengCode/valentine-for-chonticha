@@ -3,9 +3,7 @@ import { motion } from "framer-motion";
 import Anniversary from "../Anniversary/page";
 
 export default function ValentineMail() {
-
   // Add this component function before the main ValentineMail component
-  
 
   // Add this constant after your memories array
   const carouselImages = [
@@ -27,7 +25,6 @@ export default function ValentineMail() {
   ];
 
   // In your main component, replace the card divs with this:
- 
 
   return (
     <div>
@@ -71,45 +68,115 @@ export default function ValentineMail() {
               className="carousel-item relative w-full"
             >
               <motion.img
-          src={image.url}
-          alt={image.alt}
-          className="w-full h-[400px] object-cover"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
+                src={image.url}
+                alt={image.alt}
+                className="w-full h-[400px] object-cover"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
               />
               <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-          <a
-            href={`#${
-              carouselImages[
-                (index - 1 + carouselImages.length) %
-            carouselImages.length
-              ].id
-            }`}
-            className="btn btn-circle bg-base-100 opacity-70 hover:opacity-100"
-          >
-            ❮
-          </a>
-          <a
-            href={`#${
-              carouselImages[(index + 1) % carouselImages.length].id
-            }`}
-            className="btn btn-circle bg-base-100 opacity-70 hover:opacity-100"
-          >
-            ❯
-          </a>
+                <a
+                  href={`#${
+                    carouselImages[
+                      (index - 1 + carouselImages.length) %
+                        carouselImages.length
+                    ].id
+                  }`}
+                  className="btn btn-circle bg-base-100 opacity-70 hover:opacity-100"
+                >
+                  ❮
+                </a>
+                <a
+                  href={`#${
+                    carouselImages[(index + 1) % carouselImages.length].id
+                  }`}
+                  className="btn btn-circle bg-base-100 opacity-70 hover:opacity-100"
+                >
+                  ❯
+                </a>
               </div>
             </div>
           ))}
         </div>
-       
       </div>
       <Anniversary />
       <div className="w-full max-w-xl mx-auto p-4">
         <div className="carousel w-full"></div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-4">
-       
+        {[
+          {
+            src: "https://media.discordapp.net/attachments/1283830529933840507/1338767853590941696/66.webp?ex=67ac4839&is=67aaf6b9&hm=bf7f16eda4843667d35c49a415b79628874fc5f25d40a87145023d4504a2e9bb&=&format=webp&width=526&height=302",
+            title: "Card Title",
+            description: "A card component has a figure, a body part, and inside body there are title and actions parts",
+            imageItem : "https://media.discordapp.net/attachments/1283830529933840507/1338767853590941696/66.webp?ex=67ac4839&is=67aaf6b9&hm=bf7f16eda4843667d35c49a415b79628874fc5f25d40a87145023d4504a2e9bb&=&format=webp",
+          },
+          {
+            src: "https://media.discordapp.net/attachments/1283830529933840507/1338767853590941696/66.webp?ex=67ac4839&is=67aaf6b9&hm=bf7f16eda4843667d35c49a415b79628874fc5f25d40a87145023d4504a2e9bb&=&format=webp&width=526&height=302",
+            title: "Card Title",
+            description: "A card component has a figure, a body part, and inside body there are title and actions parts"
+          }
+        ].map((item, index) => (
+          <div key={index} className="card bg-base-100 w-96 shadow-sm">
+            <figure>
+              <img
+                src={item.src}
+                alt={item.title}
+                className="cursor-pointer"
+                onClick={(e) => {
+                  const modal = document.createElement('dialog');
+                  modal.className = 'modal';
+                  modal.innerHTML = `
+                    <div class="modal-box max-w-4xl">
+                      <img src="${e.currentTarget.src}" alt="Full size" class="w-full h-auto"/>
+                      <div class="modal-action">
+                        <form method="dialog">
+                          <button class="btn">Close</button>
+                        </form>
+                      </div>
+                    </div>
+                  `;
+                  document.body.appendChild(modal);
+                  modal.showModal();
+                  modal.addEventListener('close', () => {
+                    modal.remove();
+                  });
+                }}
+              />
+            </figure>
+            <div className="card-body">
+              <h2 className="card-title">{item.title}</h2>
+              <p>{item.description}</p>
+              <div className="card-actions justify-end">
+                <button 
+                  className="btn btn-primary"
+                  onClick={() => {
+                    const img = document.createElement('dialog');
+                    img.className = 'modal';
+                    img.innerHTML = `
+                      <div class="modal-box max-w-4xl flex flex-col items-center">
+                        <img src="${item.imageItem}" alt="Full size" class="w-full h-auto"/>
+                        <div class="modal-action">
+                          <form method="dialog">
+                            <button class="btn">Close</button>
+                          </form>
+                        </div>
+                      </div>
+                    `;
+                    document.body.appendChild(img);
+                    img.showModal();
+                    img.addEventListener('close', () => {
+                      img.remove();
+                    });
+                  }}
+                >
+                  View
+                </button>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
     //image

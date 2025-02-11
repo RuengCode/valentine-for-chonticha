@@ -54,6 +54,7 @@ const Valentine = () => {
           className="max-w-md"
         >
           <h1 className="text-5xl font-bold">สวัสดีจ้า</h1>
+          
           <p className="py-6">
             Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
             excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
@@ -163,7 +164,7 @@ const Valentine = () => {
               </a>
             </div>
           </div>
-          <div id="slide4" className="carousel-item relative w-full">
+          <div id="slide4" className="carousel-item relative w-full ">
             <Image
               src="/valentine.webp"
               width={500}
