@@ -9,7 +9,7 @@ export default function ValentineMail() {
   const carouselImages = [
     {
       id: "slide1",
-      url: "https://media.discordapp.net/attachments/1283830529933840507/1338071236034691092/3.webp?ex=67a9bf72&is=67a86df2&hm=aa19992242a622206e1e9e888a0c25096655106e7249a6b5439f2364ae1b9f49&=&format=webp&width=394&height=700",
+      url: "https://media.discordapp.net/attachments/1283830529933840507/1338767852978700339/77.webp?ex=67ac4839&is=67aaf6b9&hm=e728fad5699d40d5d9e7d181b6bc60083a9465eabed1eb809b8af4eb16ff5e3b&=&format=webp&width=394&height=700",
       alt: "Memory 1",
     },
     {
@@ -108,7 +108,7 @@ export default function ValentineMail() {
         {[
           {
             src: "https://media.discordapp.net/attachments/1283830529933840507/1338767853590941696/66.webp?ex=67ac4839&is=67aaf6b9&hm=bf7f16eda4843667d35c49a415b79628874fc5f25d40a87145023d4504a2e9bb&=&format=webp&width=526&height=302",
-            title: "Card Title",
+            title: "ไปเที่ยวด้วยกันวันแรก!",
             description: "A card component has a figure, a body part, and inside body there are title and actions parts",
             imageItem : "https://media.discordapp.net/attachments/1283830529933840507/1338767853590941696/66.webp?ex=67ac4839&is=67aaf6b9&hm=bf7f16eda4843667d35c49a415b79628874fc5f25d40a87145023d4504a2e9bb&=&format=webp&width=726&height=702",
           },
@@ -156,7 +156,8 @@ export default function ValentineMail() {
                     const img = document.createElement('dialog');
                     img.className = 'modal';
                     img.innerHTML = `
-                      <div class="modal-box max-w-4xl flex flex-col items-center">
+                      <div class="modal-box max-w-4xl flex flex-col items-center p-3">
+                        ${item.title}
                         <img src="${item.imageItem}" alt="Full size"/>
                         <div class="modal-action">
                           <form method="dialog">
