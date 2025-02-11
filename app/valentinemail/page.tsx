@@ -9,17 +9,17 @@ export default function ValentineMail() {
   const carouselImages = [
     {
       id: "slide1",
-      url: "https://media.discordapp.net/attachments/1283830529933840507/1338767852978700339/77.webp?ex=67ac4839&is=67aaf6b9&hm=e728fad5699d40d5d9e7d181b6bc60083a9465eabed1eb809b8af4eb16ff5e3b&=&format=webp&width=394&height=700",
+      url: "https://media.discordapp.net/attachments/1283830529933840507/1338767852978700339/77.webp?ex=67ac4839&is=67aaf6b9&hm=e728fad5699d40d5d9e7d181b6bc60083a9465eabed1eb809b8af4eb16ff5e3b&=&format=webp&width=395&height=702",
       alt: "Memory 1",
     },
     {
       id: "slide2",
-      url: "https://media.discordapp.net/attachments/1283830529933840507/1338071236378492938/2.webp?ex=67a9bf72&is=67a86df2&hm=fb8bd3b11e9b4422f6cf9ebbfed177484e94ec3c5e9b746c88647f4fe8f20170&=&format=webp&width=394&height=700",
+      url: "https://media.discordapp.net/attachments/1283830529933840507/1338767852978700339/77.webp?ex=67ac4839&is=67aaf6b9&hm=e728fad5699d40d5d9e7d181b6bc60083a9465eabed1eb809b8af4eb16ff5e3b&=&format=webp&width=395&height=702",
       alt: "Memory 2",
     },
     {
       id: "slide3",
-      url: "https://media.discordapp.net/attachments/1283830529933840507/1338071236756111391/1.webp?ex=67a9bf73&is=67a86df3&hm=15986651c95fcb5ee8d8d8371af67f1b2ea5783b21b7ec403c2aa5ee3c0c27a2&=&format=webp&width=394&height=700",
+      url: "https://media.discordapp.net/attachments/1283830529933840507/1338767852978700339/77.webp?ex=67ac4839&is=67aaf6b9&hm=e728fad5699d40d5d9e7d181b6bc60083a9465eabed1eb809b8af4eb16ff5e3b&=&format=webp&width=395&height=702",
       alt: "Memory 3",
     },
   ];
