@@ -60,7 +60,7 @@ export default function ValentineMail() {
         </motion.div>
       </div>
       <div className="w-full max-w-xl mx-auto p-4">
-        <div className="carousel w-full rounded-box">
+      <div className="carousel w-full rounded-box">
           {carouselImages.map((image, index) => (
             <div
               key={image.id}
