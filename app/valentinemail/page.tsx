@@ -1,147 +1,116 @@
 "use client";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import Anniversary from "../Anniversary/page";
 
 export default function ValentineMail() {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const slides = [
+
+  // Add this component function before the main ValentineMail component
+  
+
+  // Add this constant after your memories array
+  const carouselImages = [
     {
-      id: 1,
-      content: (
-        <img
-          src="/valentine.webp"
-          alt="Slide 1"
-          className="max-h-[300px] object-contain"
-        />
-      ),
+      id: "slide1",
+      url: "https://media.discordapp.net/attachments/1283830529933840507/1338071236034691092/3.webp?ex=67a9bf72&is=67a86df2&hm=aa19992242a622206e1e9e888a0c25096655106e7249a6b5439f2364ae1b9f49&=&format=webp&width=394&height=700",
+      alt: "Memory 1",
     },
     {
-      id: 2,
-      content: (
-        <img
-          src="/path/to/image2.jpg"
-          alt="Slide 2"
-          className="max-h-[300px] object-contain"
-        />
-      ),
+      id: "slide2",
+      url: "https://media.discordapp.net/attachments/1283830529933840507/1338071236378492938/2.webp?ex=67a9bf72&is=67a86df2&hm=fb8bd3b11e9b4422f6cf9ebbfed177484e94ec3c5e9b746c88647f4fe8f20170&=&format=webp&width=394&height=700",
+      alt: "Memory 2",
     },
     {
-      id: 3,
-      content: (
-        <img
-          src="/path/to/image3.jpg"
-          alt="Slide 3"
-          className="max-h-[300px] object-contain"
-        />
-      ),
+      id: "slide3",
+      url: "https://media.discordapp.net/attachments/1283830529933840507/1338071236756111391/1.webp?ex=67a9bf73&is=67a86df3&hm=15986651c95fcb5ee8d8d8371af67f1b2ea5783b21b7ec403c2aa5ee3c0c27a2&=&format=webp&width=394&height=700",
+      alt: "Memory 3",
     },
   ];
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-  };
+  // In your main component, replace the card divs with this:
+ 
 
   return (
     <div>
-    <div className="w-full max-w-xl mx-auto p-4">
-      <div className="carousel w-full">
+      <div className="flex flex-col items-center space-y-4 my-8 animate-bounce">
         <motion.div
-          className="carousel-item relative w-full"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="flex items-center space-x-2"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="1.5"
+            stroke="currentColor"
+            className="w-8 h-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"
+            />
+          </svg>
+          <motion.h1
+            className="text-3xl font-bold"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3, duration: 0.5 }}
+          >
+            Our Memories
+          </motion.h1>
+        </motion.div>
+      </div>
+      <div className="w-full max-w-xl mx-auto p-4">
+        <div className="carousel w-full rounded-box">
+          {carouselImages.map((image, index) => (
+            <div
+              key={image.id}
+              id={image.id}
+              className="carousel-item relative w-full"
+            >
+              <motion.img
+          src={image.url}
+          alt={image.alt}
+          className="w-full h-[400px] object-cover"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
-        >
-          <div className="w-full flex items-center justify-center min-h-[300px] bg-base-200 rounded-box">
-            {slides[currentSlide].content}
-          </div>
-
-          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <button onClick={prevSlide} className="btn btn-circle">
-              ❮
-            </button>
-            <button onClick={nextSlide} className="btn btn-circle">
-              ❯
-            </button>
-          </div>
-        </motion.div>
-      </div>
-
-      <div className="flex justify-center w-full py-2 gap-2">
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            className={`btn btn-xs ${
-              currentSlide === index ? "btn-active" : ""
+              />
+              <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+          <a
+            href={`#${
+              carouselImages[
+                (index - 1 + carouselImages.length) %
+            carouselImages.length
+              ].id
             }`}
-            onClick={() => setCurrentSlide(index)}
-          />
-        ))}
-      </div>
-      
-    </div>
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
-      <div className="card bg-base-100 shadow-sm">
-        <figure>
-          <img
-            src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-            alt="Shoes" />
-        </figure>
-        <div className="card-body">
-          <h2 className="card-title">
-            Card Title
-            <div className="badge badge-secondary">NEW</div>
-          </h2>
-          <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-          <div className="card-actions justify-end">
-            <div className="badge badge-outline">Fashion</div>
-            <div className="badge badge-outline">Products</div>
-          </div>
+            className="btn btn-circle bg-base-100 opacity-70 hover:opacity-100"
+          >
+            ❮
+          </a>
+          <a
+            href={`#${
+              carouselImages[(index + 1) % carouselImages.length].id
+            }`}
+            className="btn btn-circle bg-base-100 opacity-70 hover:opacity-100"
+          >
+            ❯
+          </a>
+              </div>
+            </div>
+          ))}
         </div>
+       
       </div>
-
-      <div className="card bg-base-100 shadow-sm">
-        <figure>
-          <img
-            src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-            alt="Shoes" />
-        </figure>
-        <div className="card-body">
-          <h2 className="card-title">
-            Card Title
-            <div className="badge badge-secondary">NEW</div>
-          </h2>
-          <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-          <div className="card-actions justify-end">
-            <div className="badge badge-outline">Fashion</div>
-            <div className="badge badge-outline">Products</div>
-          </div>
-        </div>
+      <Anniversary />
+      <div className="w-full max-w-xl mx-auto p-4">
+        <div className="carousel w-full"></div>
       </div>
-
-      <div className="card bg-base-100 shadow-sm">
-        <figure>
-          <img
-            src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-            alt="Shoes" />
-        </figure>
-        <div className="card-body">
-          <h2 className="card-title">
-            Card Title
-            <div className="badge badge-secondary">NEW</div>
-          </h2>
-          <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-          <div className="card-actions justify-end">
-            <div className="badge badge-outline">Fashion</div>
-            <div className="badge badge-outline">Products</div>
-          </div>
-        </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-4">
+       
       </div>
-    </div>
-   
     </div>
     //image
   );

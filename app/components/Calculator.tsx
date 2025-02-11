@@ -184,7 +184,7 @@ const Calculator = () => {
         </div>
       </div>
       
-      <div id="showAlt" className="alert"></div>
+      <div id="showAlt"></div>
       </div>
     </div>
     

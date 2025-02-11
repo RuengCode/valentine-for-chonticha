@@ -36,53 +36,103 @@ export default function Anniversary() {
             animate={{ opacity: 1, y: 0 }}
             className="flex flex-col items-center justify-center p-8"
         >
-            <h2 className="text-2xl font-bold text-primary mb-6">XXX Anniversary</h2>
+            <motion.h2 
+                className="text-2xl font-bold text-primary mb-6"
+                initial="hidden"
+                animate="visible"
+                variants={{
+                    visible: {
+                        transition: {
+                            staggerChildren: 0.1,
+                            repeat: Infinity,
+                            repeatDelay: 2
+                        }
+                    }
+                }}
+            >
+                {"Anniversary".split("").map((char, index) => (
+                    <motion.span
+                        key={index}
+                        variants={{
+                            hidden: { y: 20, opacity: 0 },
+                            visible: { 
+                                y: 0, 
+                                opacity: 1,
+                                transition: {
+                                    repeat: Infinity,
+                                    repeatDelay: 2
+                                }
+                            }
+                        }}
+                        style={{ display: 'inline-block' }}
+                    >
+                        {char}
+                    </motion.span>
+                ))}
+            </motion.h2>
             <div className="grid grid-flow-col gap-5 text-center auto-cols-max">
-                <motion.div className="flex flex-col p-2 bg-base-200 border border-base-300 shadow-lg rounded-lg text-base-content">
-                    <motion.span 
-                        key={timeLeft.days}
-                        initial={{ y: 20, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        className="font-mono text-5xl"
-                    >
-                        {timeLeft.days}
-                    </motion.span>
-                    days
-                </motion.div>
-                <motion.div className="flex flex-col p-2 bg-base-200 border border-base-300 shadow-lg rounded-lg text-base-content">
-                    <motion.span 
-                        key={timeLeft.hours}
-                        initial={{ y: 20, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        className="font-mono text-5xl"
-                    >
-                        {timeLeft.hours}
-                    </motion.span>
-                    hours
-                </motion.div>
-                <motion.div className="flex flex-col p-2 bg-base-200 border border-base-300 shadow-lg rounded-lg text-base-content">
-                    <motion.span 
-                        key={timeLeft.minutes}
-                        initial={{ y: 20, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        className="font-mono text-5xl"
-                    >
-                        {timeLeft.minutes}
-                    </motion.span>
-                    min
-                </motion.div>
-                <motion.div className="flex flex-col p-2 bg-base-200 border border-base-300 shadow-lg rounded-lg text-base-content">
-                    <motion.span 
-                        key={timeLeft.seconds}
-                        initial={{ y: 20, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        className="font-mono text-5xl countdown"
-                    >
-                        {timeLeft.seconds}
-                    </motion.span>
-                    <span className="text-sm opacity-70">sec</span>
-                </motion.div>
+            <motion.div 
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="flex flex-col p-2 bg-base-200 border-2 border-primary shadow-lg rounded-lg text-base-content hover:border-secondary transition-colors duration-300"
+            >
+                <motion.span 
+                key={timeLeft.days}
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                className="font-mono text-5xl"
+                >
+                {timeLeft.days}
+                </motion.span>
+                days
+            </motion.div>
+            <motion.div 
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="flex flex-col p-2 bg-base-200 border-2 border-primary shadow-lg rounded-lg text-base-content hover:border-secondary transition-colors duration-300"
+            >
+                <motion.span 
+                key={timeLeft.hours}
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                className="font-mono text-5xl"
+                >
+                {timeLeft.hours}
+                </motion.span>
+                hours
+            </motion.div>
+            <motion.div 
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="flex flex-col p-2 bg-base-200 border-2 border-primary shadow-lg rounded-lg text-base-content hover:border-secondary transition-colors duration-300"
+            >
+                <motion.span 
+                key={timeLeft.minutes}
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                className="font-mono text-5xl"
+                >
+                {timeLeft.minutes}
+                </motion.span>
+                min
+            </motion.div>
+            <motion.div 
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="flex flex-col p-2 bg-base-200 border-2 border-primary shadow-lg rounded-lg text-base-content hover:border-secondary transition-colors duration-300"
+            >
+                <motion.span 
+                key={timeLeft.seconds}
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                className="font-mono text-5xl countdown"
+                >
+                {timeLeft.seconds}
+                </motion.span>
+                <span className="text-sm opacity-70">sec</span>
+            </motion.div>
             </div>
+            
         </motion.div>
     );
 }
