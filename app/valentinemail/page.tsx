@@ -1,10 +1,14 @@
 "use client";
 import { motion } from "framer-motion";
 import Anniversary from "../Anniversary/page";
+import Calendar from "../Calenda/page";
+import { useState } from "react";
+import MiniGame from "../mini-game/page";
 
 export default function ValentineMail() {
   // Add this component function before the main ValentineMail component
 
+  const [isOpen, setIsOpen] = useState(false);
   // Add this constant after your memories array
   const carouselImages = [
     {
@@ -101,98 +105,42 @@ export default function ValentineMail() {
         </div>
       </div>
       <Anniversary />
-      <div className="w-full max-w-xl mx-auto p-4">
-        <div className="carousel w-full"></div>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-4">
-        {[
-          {
-            src: "https://media.discordapp.net/attachments/1283830529933840507/1338767853590941696/66.webp?ex=67ac4839&is=67aaf6b9&hm=bf7f16eda4843667d35c49a415b79628874fc5f25d40a87145023d4504a2e9bb&=&format=webp&width=526&height=302",
-            title: "ไปเที่ยวด้วยกันวันแรก!",
-            description: "A card component has a figure, a body part, and inside body there are title and actions parts",
-            imageItem : "https://media.discordapp.net/attachments/1283830529933840507/1338767853590941696/66.webp?ex=67ac4839&is=67aaf6b9&hm=bf7f16eda4843667d35c49a415b79628874fc5f25d40a87145023d4504a2e9bb&=&format=webp&width=726&height=702",
-            date : "11 มกราคม 2564"
-          },
-          {
-            src: "https://media.discordapp.net/attachments/1283830529933840507/1338071236034691092/3.webp?ex=67abb9b2&is=67aa6832&hm=d520a5abb0e154db9081aecd0cec458beea6dde7ef4224b381d16dd973748d15&=&format=webp&width=526&height=302",
-            title: "Card Title",
-            description: "A card component has a figure, a body part, and inside body there are title and actions parts",
-            imageItem : "https://media.discordapp.net/attachments/1283830529933840507/1338071236034691092/3.webp?ex=67abb9b2&is=67aa6832&hm=d520a5abb0e154db9081aecd0cec458beea6dde7ef4224b381d16dd973748d15&=&format=webp&width=726&height=702"
-          },
-          {
-            src: "https://media.discordapp.net/attachments/1283830529933840507/1338767853590941696/66.webp?ex=67ac4839&is=67aaf6b9&hm=bf7f16eda4843667d35c49a415b79628874fc5f25d40a87145023d4504a2e9bb&=&format=webp&width=526&height=302",
-            title: "ไปเที่ยวด้วยกันวันแรก!",
-            description: "A card component has a figure, a body part, and inside body there are title and actions parts",
-            imageItem : "https://media.discordapp.net/attachments/1283830529933840507/1338767853590941696/66.webp?ex=67ac4839&is=67aaf6b9&hm=bf7f16eda4843667d35c49a415b79628874fc5f25d40a87145023d4504a2e9bb&=&format=webp&width=726&height=702",
-            date : "11 มกราคม 2564"
-          },
-        ].map((item, index) => (
-          <div key={index} className="card bg-base-100 w-96 shadow-sm">
-            <figure>
-              <img
-                src={item.src}
-                alt={item.title}
-                className="cursor-pointer"
-                onClick={(e) => {
-                  const modal = document.createElement('dialog');
-                  modal.className = 'modal';
-                  modal.innerHTML = `
-                    <div class="modal-box max-w-4xl">
-                      <img src="${e.currentTarget.src}" alt="Full size" class="w-full h-auto w-xl"/>
-                      <div class="modal-action">
-                        <form method="dialog">
-                          <button class="btn">Close</button>
-                        </form>
-                        
-                      </div>
-                    </div>
-                  `;
-                  document.body.appendChild(modal);
-                  modal.showModal();
-                  modal.addEventListener('close', () => {
-                    modal.remove();
-                  });
-                  
-                }}
-              />
-            </figure>
-            <div className="card-body">
-              <h2 className="card-title">{item.title}</h2><div className="card-actions justify-start"><div className="badge badge-outline"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-4">
-  <path strokeLinecap="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z" />
-</svg>{item.date}
-</div></div>
-              <p>{item.description}</p>
-              
-              <div className="card-actions justify-end">
-                <button 
-                  className="btn btn-primary"
-                  onClick={() => {
-                    const img = document.createElement('dialog');
-                    img.className = 'modal';
-                    img.innerHTML = `
-                      <div class="modal-box max-w-4xl flex flex-col items-center p-3">
-                        ${item.title}
-                        <img src="${item.imageItem}" alt="Full size"/>
-                        <div class="modal-action">
-                          <form method="dialog">
-                            <button class="btn">Close</button>
-                          </form>
-                        </div>
-                      </div>
-                    `;
-                    document.body.appendChild(img);
-                    img.showModal();
-                    img.addEventListener('close', () => {
-                      img.remove();
-                    });
-                  }}
-                >
-                  View
-                </button>
+      <div className="grid grid-cols-1 p-4 items-center">
+        
+      <motion.h2 
+        className="text-center text-2xl text-primary font-bold animate-bounce"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        Date of relationship
+      </motion.h2>
+        <Calendar />
+
+        <>
+          <button 
+            className="btn btn-primary mt-4" 
+            onClick={() => setIsOpen(true)}
+          >
+            Go !!!!
+          </button>
+
+          {isOpen && (
+            <dialog className="modal modal-open">
+              <div className="modal-box">
+                <h3 className="font-bold text-lg">Hello!</h3>
+                <p className="py-4">Press ESC key or click the button below to close</p>
+                <MiniGame />
+                <div className="modal-action">
+                  <button className="btn" onClick={() => setIsOpen(false)}>Close</button>
+                </div>
               </div>
-            </div>
-          </div>
-        ))}
+              <form method="dialog" className="modal-backdrop">
+                <button onClick={() => setIsOpen(false)}>close</button>
+              </form>
+            </dialog>
+          )}
+        </>
       </div>
     </div>
     //image
