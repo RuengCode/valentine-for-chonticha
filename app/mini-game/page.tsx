@@ -1,97 +1,133 @@
-import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+type CardType = {
+    id: number;
+    pairId: string;
+    isFlipped: boolean;
+    isMatched: boolean;
+};
 
-export default function MiniGame() {
-
-    const [cards, setCards] = useState(() => {
-        const cardValues = [
-            { value: "❤️", flipped: false, matched: false },
-            { value: "❤️", flipped: false, matched: false },
-            { value: "🤗", flipped: false, matched: false },
-            { value: "🤗", flipped: false, matched: false },
-            { value: "😄", flipped: false, matched: false },
-            { value: "😄", flipped: false, matched: false },
-            { value: "🤗", flipped: false, matched: false },
-            { value: "🤗", flipped: false, matched: false },
-        ];
-        return cardValues
-            .sort(() => Math.random() - 0.5)
-            .map((card, index) => ({ ...card, id: index + 1 }));
-    });
-  const [flipped, setFlipped] = useState<number[]>([]);
-  const [message, setMessage] = useState<{
-    type: "success" | "error" | "info" | null;
-    text: string;
-  }>({
-    type: " ",
-    text: " ",
-  });
-
-  function handleCardClick(index: number) {
-    if (cards[index].flipped || cards[index].matched) return;
-    const updated = [...cards];
-    updated[index].flipped = true;
-    setCards(updated);
-    setFlipped([...flipped, index]);
-  }
-
-  useEffect(() => {
-    if (flipped.length === 2) {
-      const [first, second] = flipped;
-      if (cards[first].value === cards[second].value) {
-        const updated = [...cards];
-        updated[first].matched = true;
-        updated[second].matched = true;
-        setCards(updated);
-        setMessage({ type: "success", text: "Match found! 🎉" });
-        setTimeout(() => {
-          window.location.href = "gallerymemory";
-        }, 1000);
-      } else {
-        setMessage({ type: "error", text: "No match! Try again! 🤔" });
-        setTimeout(() => {
-          setMessage({ type: null, text: "" });
-        }, 800);
-        setTimeout(() => {
-          const updated = [...cards];
-          updated[first].flipped = false;
-          updated[second].flipped = false;
-          setCards(updated);
-        }, 1000);
-      }
-      setFlipped([]);
+const generateDeck = () => {
+    const icons = ['❤️', '😊', '🌟', '🎮', '🎨', '🎵', '🌈', '🎪'];
+    let deck: CardType[] = [];
+    let id = 0;
+    
+    // Take first 8 icons and create pairs
+    for (let i = 0; i < 2; i++) {
+        deck.push({ id: id++, pairId: icons[i], isFlipped: false, isMatched: false });
+        deck.push({ id: id++, pairId: icons[i], isFlipped: false, isMatched: false });
     }
-  }, [flipped, cards]);
+    // Shuffle deck
+    deck = deck.sort(() => Math.random() - 0.5);
+    return deck;
+};
 
-  return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.3 }}
-      className="flex flex-col space-y-4 text-center"
-    >
-      <h3 className="font-bold">Memory Game</h3>
-      <p>Match the cards to win!</p>
-      <div className="grid grid-cols-4 gap-4 align-center">
-        {cards.map((card, i) => (
-          <motion.div
-            key={card.id}
-            onClick={() => handleCardClick(i)}
-            className="w-16 h-24 flex items-center justify-center cursor-pointer border-1 border-solid rounded-lg"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            animate={{
-              rotateY: card.flipped || card.matched ? 180 : 0,
-            }}
-            transition={{ duration: 0.3 }}
-          >
-            {card.flipped || card.matched ? card.value : ''}
-          </motion.div>
-        ))}
-      </div>
-      <div role="alert" className={`alert alert-${message.type} alert-soft`}>
-        <span>{message.text}</span>
-      </div>
-    </motion.div>
-  );
+export default function Page() {
+    const [cards, setCards] = useState<CardType[]>(generateDeck());
+    const [flippedCards, setFlippedCards] = useState<number[]>([]);
+    const [disabled, setDisabled] = useState(false);
+
+    const flipCard = (index: number) => {
+        if (disabled) return;
+        const card = cards[index];
+        if (card.isFlipped || card.isMatched) return;
+
+        const newCards = [...cards];
+        newCards[index] = { ...card, isFlipped: true };
+        setCards(newCards);
+
+        const newFlipped = [...flippedCards, index];
+        setFlippedCards(newFlipped);
+
+        if (newFlipped.length === 2) {
+            setDisabled(true);
+        }
+    };
+
+    useEffect(() => {
+        if (flippedCards.length === 2) {
+            const [firstIndex, secondIndex] = flippedCards;
+            const firstCard = cards[firstIndex];
+            const secondCard = cards[secondIndex];
+
+            if (firstCard.pairId === secondCard.pairId) {
+                // Mark as matched
+                const newCards = [...cards];
+                newCards[firstIndex] = { ...firstCard, isMatched: true };
+                newCards[secondIndex] = { ...secondCard, isMatched: true };
+                setCards(newCards);
+                setFlippedCards([]);
+                setDisabled(false);
+
+                // Check if all cards are matched
+                const allMatched = newCards.every(card => card.isMatched);
+                if (allMatched) {
+                    // Redirect to valentinemail page after a short delay
+                    setTimeout(() => {
+                        window.location.href = "valentinemail";
+                      }, 1000);
+                }
+            } else {
+                // Flip back after a delay
+                setTimeout(() => {
+                    const newCards = [...cards];
+                    newCards[firstIndex] = { ...firstCard, isFlipped: false };
+                    newCards[secondIndex] = { ...secondCard, isFlipped: false };
+                    setCards(newCards);
+                    setFlippedCards([]);
+                    setDisabled(false);
+                }, 1000);
+            }
+        }
+    }, [flippedCards, cards]);
+
+    const resetGame = () => {
+        setCards(generateDeck());
+        setFlippedCards([]);
+        setDisabled(false);
+    };
+
+    return (
+        <div className="flex flex-col items-center p-8 font-sans">
+            <h1 className="text-2xl font-bold mb-4">Memory Game</h1>
+           
+            <div className="grid grid-cols-4 gap-3">
+                {cards.map((card, index) => (
+                    <motion.div
+                        key={card.id}
+                        className={`
+                            w-16 h-16 rounded-lg flex items-center justify-center text-3xl
+                            ${card.isFlipped || card.isMatched 
+                                ? 'bg-base-200' 
+                                : 'bg-gray-400 cursor-pointer'
+                            }
+                        `}
+                        onClick={() => flipCard(index)}
+                        initial={{ rotateY: 0 }}
+                        animate={{ 
+                            rotateY: card.isFlipped || card.isMatched ? 180 : 0
+                        }}
+                        transition={{ duration: 0.6 }}
+                        style={{ perspective: 1000 }}
+                    >
+                        <motion.div
+                            style={{ 
+                                rotateY: card.isFlipped || card.isMatched ? 180 : 0
+                            }}
+                        >
+                            {(card.isFlipped || card.isMatched) && (
+                                <span>{card.pairId}</span>
+                            )}
+                        </motion.div>
+                    </motion.div>
+                ))}
+            </div>
+            <button 
+                className="btn btn-primary mb-4 mt-4"
+                onClick={resetGame}
+            >
+                Reset Game
+            </button>
+        </div>
+    );
 }
