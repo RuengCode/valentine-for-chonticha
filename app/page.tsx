@@ -1,6 +1,6 @@
 'use client'
 import Valentine from "./components/Valentine";
-import ValentineBook from "./gallerymemory/page";
+import ValentineBook from "./ValentineBook/page";
 
 export default function Home() {
   return (

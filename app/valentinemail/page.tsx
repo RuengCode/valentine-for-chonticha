@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Anniversary from "../Anniversary/page";
-import Calendar from "../Calenda/page";
+import Calendar from "../Calends/page";
 import { useState } from "react";
 import MiniGame from "../mini-game/page";
 
@@ -130,7 +130,7 @@ export default function ValentineMail() {
               <div className="modal-box">
 
                 <MiniGame />
-                
+
                 <div className="modal-action">
                   <button className="btn" onClick={() => setIsOpen(false)}>Close</button>
                 </div>
