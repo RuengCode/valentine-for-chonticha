@@ -1,10 +1,10 @@
 "use client";
 import React from "react";
 import Calculator from "./Calculator";
-
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+
 
 export function TimerClose() {
   const [progress, setProgress] = useState(0);
@@ -53,12 +53,12 @@ const Valentine = () => {
           transition={{ duration: 1 }}
           className="max-w-md"
         >
-          <h1 className="text-5xl font-bold">สวัสดีจ้า</h1>
+          <h1 className="text-5xl font-bold">Welcome to 2025</h1>
           
           <p className="py-6">
-            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-            excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
-            a id nisi.
+        Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
+        excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
+        a id nisi.
           </p>
             <motion.button
             whileHover={{ scale: 1.1 }}

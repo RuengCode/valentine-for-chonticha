@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+
 type CardType = {
     id: number;
     pairId: string;
@@ -13,7 +14,7 @@ const generateDeck = () => {
     let id = 0;
     
     // Take first 8 icons and create pairs
-    for (let i = 0; i < 2; i++) {
+    for (let i = 0; i < 6; i++) {
         deck.push({ id: id++, pairId: icons[i], isFlipped: false, isMatched: false });
         deck.push({ id: id++, pairId: icons[i], isFlipped: false, isMatched: false });
     }
@@ -22,10 +23,12 @@ const generateDeck = () => {
     return deck;
 };
 
+
 export default function Page() {
     const [cards, setCards] = useState<CardType[]>(generateDeck());
     const [flippedCards, setFlippedCards] = useState<number[]>([]);
     const [disabled, setDisabled] = useState(false);
+    const [message, setMessage] = useState<{ type: "success" | "error" | "info" | null; text: string; }>({ type: null, text: '' });
 
     const flipCard = (index: number) => {
         if (disabled) return;
@@ -61,11 +64,14 @@ export default function Page() {
 
                 // Check if all cards are matched
                 const allMatched = newCards.every(card => card.isMatched);
+                
                 if (allMatched) {
                     // Redirect to valentinemail page after a short delay
+                    setMessage({ type: "success", text: "Match found! 🎉" });
                     setTimeout(() => {
                         window.location.href = "valentinemail";
                       }, 1000);
+                    
                 }
             } else {
                 // Flip back after a delay
@@ -122,12 +128,31 @@ export default function Page() {
                     </motion.div>
                 ))}
             </div>
+            <div className="w-full max-w-xs mt-4">
+                <motion.div className="w-full bg-gray-200 rounded-full h-2.5">
+                    <motion.div
+                        className="bg-primary h-2.5 rounded-full"
+                        initial={{ width: 0 }}
+                        animate={{ 
+                            width: `${(cards.filter(card => card.isMatched).length / cards.length) * 100}%` 
+                        }}
+                        transition={{ duration: 0.5 }}
+                    />
+                </motion.div>
+            </div>
+            
             <button 
-                className="btn btn-primary mb-4 mt-4"
+                className="btn btn-error mb-4 mt-4"
                 onClick={resetGame}
             >
                 Reset Game
             </button>
-        </div>
+            {message.type && (
+                <div className={`alert alert-${message.type} mt-4`}>
+                    <span>{message.text}</span>
+                </div>
+            )}
+            
+      </div>
     );
 }
