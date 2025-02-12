@@ -127,7 +127,7 @@ export default function ValentineMail() {
 
           {isOpen && (
             <dialog className="modal modal-open">
-              <div className="modal-box">
+              <div className="modal-box bg-base-100">
 
                 <MiniGame />
 

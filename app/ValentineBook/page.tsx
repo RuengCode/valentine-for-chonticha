@@ -1,4 +1,8 @@
+"use client"
+import { useState } from 'react';
+
 export default function ValentineBook() {
+    const [isLiked, setIsLiked] = useState(false);
     return (
         <div className="min-h-screen bg-base-100 flex justify-center items-center p-4">
             <div className="card bg-base-200 text-base-content w-full md:w-[40rem]">
@@ -61,14 +65,42 @@ export default function ValentineBook() {
 
                     {/* Footer */}
                     <div className="flex justify-between items-center pt-5">
-                        <button className="btn btn-ghost btn-sm">
-                            <svg className="h-4 w-4 text-error" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor" strokeWidth="2">
-                                <path strokeLinecap="round" strokeLinejoin="round"
-                                    d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
+                     
+
+                        <button 
+                            className="btn btn-ghost btn-sm"
+                            onClick={() => setIsLiked(!isLiked)}
+                        >
+                            <svg 
+                                className={`h-4 w-4 ${isLiked ? 'text-error fill-error' : 'text-error'}`}
+                                fill="none" 
+                                viewBox="0 0 24 24"
+                                stroke="currentColor" 
+                                strokeWidth="2"
+                            >
+                                <path 
+                                    strokeLinecap="round" 
+                                    strokeLinejoin="round"
+                                    d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" 
+                                />
                             </svg>
                         </button>
-                        <div className="opacity-70 text-sm">23 Comments</div>
+                        <div className="flex gap-4">
+                            <div className="flex items-center gap-1 opacity-70 text-sm">
+                                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" 
+                                        d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+                                </svg>
+                                Share
+                            </div>
+                            <div className="flex items-center gap-1 opacity-70 text-sm">
+                                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" 
+                                        d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                                </svg>
+                                23 Comments
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

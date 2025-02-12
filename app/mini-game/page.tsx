@@ -15,7 +15,7 @@ const generateDeck = () => {
     let id = 0;
     
     // Take first 8 icons and create pairs
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < 2; i++) {
         deck.push({ id: id++, pairId: icons[i], isFlipped: false, isMatched: false });
         deck.push({ id: id++, pairId: icons[i], isFlipped: false, isMatched: false });
     }
@@ -70,7 +70,7 @@ export default function Page() {
                     // Redirect to valentinemail page after a short delay
                     setMessage({ type: "success", text: "Match found! 🎉" });
                     setTimeout(() => {
-                        window.location.href = "valentinemail";
+                        window.location.href = "ValentineBook";
                       }, 1000);
                     
                 }

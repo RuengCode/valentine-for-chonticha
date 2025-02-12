@@ -10,9 +10,11 @@
   },
   "dependencies": {
     "@tailwindcss/postcss": "^4.0.3",
+    "@types/js-cookie": "^3.0.6",
     "@types/styled-components": "^5.1.34",
     "cally": "^0.8.0",
     "framer-motion": "^12.3.1",
+    "js-cookie": "^3.0.5",
     "motion": "^12.3.1",
     "next": "15.1.6",
     "pikaday": "^1.8.2",

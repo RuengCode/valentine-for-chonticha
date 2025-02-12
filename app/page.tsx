@@ -1,13 +1,22 @@
 'use client'
 import Valentine from "./components/Valentine";
-import ValentineBook from "./ValentineBook/page";
+import {useEffect } from 'react';
+import Cookies from 'js-cookie';
 
 export default function Home() {
+  useEffect(() => {
+    // Check if user has visited before
+    const hasVisited = Cookies.get('hasVisited');
+    
+    if (!hasVisited) {
+      // Set a cookie that expires in 7 days
+      Cookies.set('hasVisited', 'true', { expires: 7 });
+    }
+  }, []);
+
   return (
-   
-   <div>
+    <div>
       <Valentine />
-      <ValentineBook />
-   </div>
+    </div>
   );
 }
