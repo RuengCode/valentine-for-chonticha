@@ -27,7 +27,7 @@ export default function ValentineBook() {
                   <div className="badge badge-primary badge-sm">✓</div>
                   <div className="text-xs opacity-70">posted an update</div>
                 </div>
-                <p className="text-xs opacity-70">10 Months Ago</p>
+                <p className="text-xs opacity-70">4 Months Ago</p>
               </div>
             </div>
 
@@ -209,7 +209,7 @@ export default function ValentineBook() {
                   <div className="badge badge-primary badge-sm">✓</div>
                   <div className="text-xs opacity-70">posted an update</div>
                 </div>
-                <p className="text-xs opacity-70">10 Months Ago</p>
+                <p className="text-xs opacity-70">4 Months Ago</p>
               </div>
             </div>
 
@@ -227,12 +227,12 @@ export default function ValentineBook() {
                   className="rounded-box w-full h-56 object-cover cursor-pointer"
                   onClick={() => {
                     setSelectedImage(
-                      "https://media.discordapp.net/attachments/1283830529933840507/1339162086739021875/005.jpg?ex=67adb761&is=67ac65e1&hm=c8a3ab934bcf6a7669590e1944ddb78997c5433dc0fa5fdfbd60977b2e786b13&=&format=webp&width=525&height=701"
+                      "/6.webp"
                     );
                     setShowModal(true);
                   }}
-                  src="https://media.discordapp.net/attachments/1283830529933840507/1339162086739021875/005.jpg?ex=67adb761&is=67ac65e1&hm=c8a3ab934bcf6a7669590e1944ddb78997c5433dc0fa5fdfbd60977b2e786b13&=&format=webp&width=525&height=701"
-                  alt="Image 1"
+                  src="/6.webp"
+                  alt="Image 6"
                 />
               </div>
               <div className="col-span-3">
@@ -240,12 +240,12 @@ export default function ValentineBook() {
                   className="rounded-box w-full h-56 object-cover cursor-pointer"
                   onClick={() => {
                     setSelectedImage(
-                      "https://media.discordapp.net/attachments/1283830529933840507/1339162087359774770/003.jpg?ex=67adb762&is=67ac65e2&hm=b4bcab359127b0818cee251de4f1e8df918615b822083bd96372b32229f560cb&=&format=webp&width=394&height=700"
+                      "/7.webp"
                     );
                     setShowModal(true);
                   }}
-                  src="https://media.discordapp.net/attachments/1283830529933840507/1339162087359774770/003.jpg?ex=67adb762&is=67ac65e2&hm=b4bcab359127b0818cee251de4f1e8df918615b822083bd96372b32229f560cb&=&format=webp&width=394&height=700"
-                  alt="Image 2"
+                  src="/7.webp"
+                  alt="Image 7"
                 />
               </div>
               <div className="col-span-2">
@@ -253,12 +253,12 @@ export default function ValentineBook() {
                   className="rounded-box w-full h-40 object-cover cursor-pointer"
                   onClick={() => {
                     setSelectedImage(
-                      "https://media.discordapp.net/attachments/1283830529933840507/1339162087359774770/003.jpg?ex=67adb762&is=67ac65e2&hm=b4bcab359127b0818cee251de4f1e8df918615b822083bd96372b32229f560cb&=&format=webp&width=394&height=700"
+                      "/8.webp"
                     );
                     setShowModal(true);
                   }}
-                  src="https://media.discordapp.net/attachments/1283830529933840507/1339162087359774770/003.jpg?ex=67adb762&is=67ac65e2&hm=b4bcab359127b0818cee251de4f1e8df918615b822083bd96372b32229f560cb&=&format=webp&width=394&height=700"
-                  alt="Image 3"
+                  src="/8.webp"
+                  alt="Image 8"
                 />
               </div>
               <div className="col-span-2">
@@ -266,12 +266,12 @@ export default function ValentineBook() {
                   className="rounded-box w-full h-40 object-cover cursor-pointer"
                   onClick={() => {
                     setSelectedImage(
-                      "https://media.discordapp.net/attachments/1283830529933840507/1339162088169410603/001.jpg?ex=67adb762&is=67ac65e2&hm=d74c619ddec9c57d8f55768427629f07010e8dd343c0c8f3b29f3ef23b3d48e9&=&format=webp&width=394&height=700"
+                      "/9.webp"
                     );
                     setShowModal(true);
                   }}
-                  src="https://media.discordapp.net/attachments/1283830529933840507/1339162088169410603/001.jpg?ex=67adb762&is=67ac65e2&hm=d74c619ddec9c57d8f55768427629f07010e8dd343c0c8f3b29f3ef23b3d48e9&=&format=webp&width=394&height=700"
-                  alt="Image 4"
+                  src="/9.webp"
+                  alt="Image 9"
                 />
               </div>
               <div className="col-span-2">
@@ -279,12 +279,12 @@ export default function ValentineBook() {
                   className="rounded-box w-full h-40 object-cover cursor-pointer"
                   onClick={() => {
                     setSelectedImage(
-                      "https://media.discordapp.net/attachments/1283830529933840507/1339162088509014048/009.jpg?ex=67adb762&is=67ac65e2&hm=e96afbfe8173416e2ede95146f06ab036b012d801308d9119419dcc7014dcf61&=&format=webp&width=394&height=700"
+                      "/10.webp"
                     );
                     setShowModal(true);
                   }}
-                  src="https://media.discordapp.net/attachments/1283830529933840507/1339162088509014048/009.jpg?ex=67adb762&is=67ac65e2&hm=e96afbfe8173416e2ede95146f06ab036b012d801308d9119419dcc7014dcf61&=&format=webp&width=394&height=700"
-                  alt="Image 5"
+                  src="/10.webp"
+                  alt="Image 10"
                 />
               </div>
 
