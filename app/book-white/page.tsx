@@ -22,8 +22,19 @@ export default function TodoList() {
 const handleAddTodo = () => {
     if (newTodo.trim()) {
         const todoWithTime = `${newTodo.trim()}`;
-        setTodos([...todos, todoWithTime]);
+        const updatedTodos = [...todos, todoWithTime];
+        setTodos(updatedTodos);
         setNewTodo("");
+        
+        // Create and download JSON file
+        const jsonData = JSON.stringify(updatedTodos, null, 2);
+        const blob = new Blob([jsonData], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'todos.json';
+        a.click();
+        URL.revokeObjectURL(url);
     }
 };
 const currentTime = new Date().toLocaleString();
