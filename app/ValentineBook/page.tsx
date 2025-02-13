@@ -16,7 +16,6 @@ export default function ValentineBook() {
               <div className="avatar">
                 <div className="w-12 h-12 rounded-full">
                   <img
-                    alt="avatar"
                     src="https://media.discordapp.net/attachments/1283830529933840507/1339486864763125812/117768640_3217190941694824_9124819090644706857_n.jpg?ex=67aee5db&is=67ad945b&hm=b4c4f7fb27642ed6df5e59e577515d2da548c188d5b7a67892aec912b7b9bb42&=&format=webp&width=701&height=701"
                   />
                 </div>
@@ -193,7 +192,6 @@ export default function ValentineBook() {
               <div className="avatar">
                 <div className="w-12 h-12 rounded-full">
                   <img
-                    alt="avatar"
                     src="https://media.discordapp.net/attachments/1283830529933840507/1339486864763125812/117768640_3217190941694824_9124819090644706857_n.jpg?ex=67aee5db&is=67ad945b&hm=b4c4f7fb27642ed6df5e59e577515d2da548c188d5b7a67892aec912b7b9bb42&=&format=webp&width=701&height=701"
                   />
                 </div>
@@ -368,7 +366,6 @@ export default function ValentineBook() {
               <div className="avatar">
                 <div className="w-12 h-12 rounded-full">
                   <img
-                    alt="avatar"
                     src="https://media.discordapp.net/attachments/1283830529933840507/1339486864763125812/117768640_3217190941694824_9124819090644706857_n.jpg?ex=67aee5db&is=67ad945b&hm=b4c4f7fb27642ed6df5e59e577515d2da548c188d5b7a67892aec912b7b9bb42&=&format=webp&width=701&height=701"
                   />
                 </div>
@@ -544,7 +541,6 @@ export default function ValentineBook() {
               <div className="avatar">
                 <div className="w-12 h-12 rounded-full">
                   <img
-                    alt="avatar"
                     src="https://media.discordapp.net/attachments/1283830529933840507/1339486864763125812/117768640_3217190941694824_9124819090644706857_n.jpg?ex=67aee5db&is=67ad945b&hm=b4c4f7fb27642ed6df5e59e577515d2da548c188d5b7a67892aec912b7b9bb42&=&format=webp&width=701&height=701"
                   />
                 </div>
