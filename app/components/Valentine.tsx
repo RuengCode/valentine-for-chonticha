@@ -117,7 +117,7 @@ const Valentine = () => {
         <div className="carousel w-full max-w-sm rounded-lg shadow-2xl">
           <div id="slide1" className="carousel-item relative w-full">
             <Image
-              src="/valentine.webp"
+              src="/17.webp"
               width={500}
               height={300}
               className="w-full"
@@ -134,7 +134,7 @@ const Valentine = () => {
           </div>
           <div id="slide2" className="carousel-item relative w-full">
             <Image
-              src="/valentine.webp"
+              src="/10.webp"
               width={500}
               height={300}
               className="w-full"
@@ -151,7 +151,7 @@ const Valentine = () => {
           </div>
           <div id="slide3" className="carousel-item relative w-full">
             <Image
-              src="/valentine.webp"
+              src="/11.webp"
               width={500}
               height={300}
               className="w-full"
@@ -168,7 +168,7 @@ const Valentine = () => {
           </div>
           <div id="slide4" className="carousel-item relative w-full ">
             <Image
-              src="/valentine.webp"
+              src="/19.webp"
               width={500}
               height={300}
               className="w-full"
