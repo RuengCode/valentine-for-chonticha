@@ -55,12 +55,17 @@ const Valentine = () => {
         transition={{ duration: 1 }}
         className="max-w-md"
       >
-        <h1 className="text-5xl font-bold">Welcome to 2025</h1>
+        <motion.h1
+          className="text-5xl font-bold"
+          initial={{ opacity: 0, x: -100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 2 }}
+        >
+          Happy Valentine Day
+        </motion.h1>
         
         <p className="py-6">
-      Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-      excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
-      a id nisi.
+        Valentine’s Day or not, I will always love you. Happy Valentine’s Day!
         </p>
         <motion.button
         whileHover={{ scale: 1.1 }}
@@ -93,8 +98,8 @@ const Valentine = () => {
           <dialog id="my_modal_1" className="modal">
             <div className="modal-box bg-base-200 text-center">
               <div className="card-footer bg-base-100 shadow-2xl mb-2 rounded-lg p-1">
-                <h3 className="font-bold text-lg">Hello!</h3>
-                <p>Will you be my Valentine?</p>
+                <h3 className="font-bold text-lg">Valentine</h3>
+                <p>ลองใส่รหัสดูซิ จะใส่ถูกหรือป่าวน้า</p>
               </div>
               <Calculator />
               <div className="card-footer bg-base-100 shadow-2xl justify-center items-center rounded-md m-3">
@@ -152,7 +157,7 @@ const Valentine = () => {
           <div id="slide3" className="carousel-item relative w-full">
             <Image
               src="/11.webp"
-              width={500}
+              width={300}
               height={300}
               className="w-full"
               alt="Valentine's Image 3"

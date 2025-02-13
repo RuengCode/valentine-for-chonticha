@@ -10,12 +10,12 @@ type CardType = {
 };
 
 const generateDeck = () => {
-    const icons = ['❤️', '😊', '🌟', '🎮', '🎨', '🎵', '🌈', '🎪'];
+    const icons = ['❤️', '💕', '🤍', '💖', '💏', '🫰', '🌹', '💌'];
     let deck: CardType[] = [];
     let id = 0;
     
     // Take first 8 icons and create pairs
-    for (let i = 0; i < 2; i++) {
+    for (let i = 0; i < 8; i++) {
         deck.push({ id: id++, pairId: icons[i], isFlipped: false, isMatched: false });
         deck.push({ id: id++, pairId: icons[i], isFlipped: false, isMatched: false });
     }
@@ -68,7 +68,7 @@ export default function Page() {
                 
                 if (allMatched) {
                     // Redirect to valentinemail page after a short delay
-                    setMessage({ type: "success", text: "Match found! 🎉" });
+                    setMessage({ type: "success", text: "เก่งมากคุณป้อนนนนน! 🎉" });
                     setTimeout(() => {
                         window.location.href = "ValentineBook";
                       }, 1000);

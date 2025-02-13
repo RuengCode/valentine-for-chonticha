@@ -32,7 +32,7 @@ export default function ValentineBook() {
             <div className="avatar">
           <div className="w-12 h-12 rounded-full">
             <img
-              src="https://media.discordapp.net/attachments/1283830529933840507/1339486864763125812/117768640_3217190941694824_9124819090644706857_n.jpg"
+              src="/profile.webp"
               alt="Profile picture"
             />
           </div>

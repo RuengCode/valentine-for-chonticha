@@ -55,7 +55,7 @@ const Calculator = () => {
     const result = input;
     setInput(result.toString());
     console.log(result);
-    if (result === "1") {
+    if (result === "22112024") {
       showAlertฺ("คุณเก่งที่สุดเลยคุณป้อน", "success");
       setTimeout(() => {
         window.location.href = "valentinemail";
