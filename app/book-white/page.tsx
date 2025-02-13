@@ -29,7 +29,6 @@ const handleAddTodo = () => {
 const currentTime = new Date().toLocaleString();
 
 const handleDeleteTodo = (index: number) => {
-    
         const newTodos = todos.filter((_, i) => i !== index);
         setTodos(newTodos);
     
