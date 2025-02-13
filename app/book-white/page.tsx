@@ -1,4 +1,3 @@
-
 'use client';
 import { useState, useEffect } from 'react';
 
@@ -106,9 +105,3 @@ export default function BookWhite() {
     </div>
   );
 }
-
-// export default function BookWhite() {
-//   return(
-//     <div></div>
-//   )
-// }
