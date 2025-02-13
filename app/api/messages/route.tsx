@@ -72,10 +72,6 @@ export async function DELETE(request: Request) {
     } catch {
       messages = [];
     }
-
-    // Filter out the deleted message
-    
-
     // Write updated array to file
     await fs.writeFile(DATA_FILE, JSON.stringify(messages, null, 2));
     return NextResponse.json({ success: true });
