@@ -1,12 +1,7 @@
+
 import { NextResponse } from 'next/server';
 import fs from 'fs/promises';
 import path from 'path';
-
-interface Message {
-  id: number;
-  createdAt: string;
-  [key: string]: string | number | boolean;
-}
 
 const DATA_FILE = path.join(process.cwd(), 'data', 'messages.json');
 
@@ -68,19 +63,18 @@ export async function DELETE(request: Request) {
     }
 
     await ensureDirectory();
-    let messages: Message[] = [];
+    let messages = [];
 
     // Read existing messages
     try {
       const existingData = await fs.readFile(DATA_FILE, 'utf-8');
       messages = JSON.parse(existingData);
-      messages = messages.filter((msg: Message) => msg.id.toString() !== messageId);
     } catch {
       messages = [];
     }
 
     // Filter out the deleted message
-    messages = messages.filter((msg: Message) => msg.id.toString() !== messageId);
+    messages = messages.filter((msg: any) => msg.id.toString() !== messageId);
 
     // Write updated array to file
     await fs.writeFile(DATA_FILE, JSON.stringify(messages, null, 2));
