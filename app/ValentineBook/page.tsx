@@ -71,11 +71,11 @@ export default function ValentineBook() {
                   className="rounded-box w-full h-40 object-cover cursor-pointer"
                   onClick={() => {
                     setSelectedImage(
-                      "https://media.discordapp.net/attachments/1283830529933840507/1339162087359774770/003.jpg?ex=67adb762&is=67ac65e2&hm=b4bcab359127b0818cee251de4f1e8df918615b822083bd96372b32229f560cb&=&format=webp&width=394&height=700"
+                      "/3.webp"
                     );
                     setShowModal(true);
                   }}
-                  src="https://media.discordapp.net/attachments/1283830529933840507/1339162087359774770/003.jpg?ex=67adb762&is=67ac65e2&hm=b4bcab359127b0818cee251de4f1e8df918615b822083bd96372b32229f560cb&=&format=webp&width=394&height=700"
+                  src="/3.webp"
                   alt="Image 3"
                 />
               </div>
@@ -84,11 +84,11 @@ export default function ValentineBook() {
                   className="rounded-box w-full h-40 object-cover cursor-pointer"
                   onClick={() => {
                     setSelectedImage(
-                      "https://media.discordapp.net/attachments/1283830529933840507/1339162088169410603/001.jpg?ex=67adb762&is=67ac65e2&hm=d74c619ddec9c57d8f55768427629f07010e8dd343c0c8f3b29f3ef23b3d48e9&=&format=webp&width=394&height=700"
+                      "/4.webp"
                     );
                     setShowModal(true);
                   }}
-                  src="https://media.discordapp.net/attachments/1283830529933840507/1339162088169410603/001.jpg?ex=67adb762&is=67ac65e2&hm=d74c619ddec9c57d8f55768427629f07010e8dd343c0c8f3b29f3ef23b3d48e9&=&format=webp&width=394&height=700"
+                  src="/4.webp"
                   alt="Image 4"
                 />
               </div>
@@ -97,11 +97,11 @@ export default function ValentineBook() {
                   className="rounded-box w-full h-40 object-cover cursor-pointer"
                   onClick={() => {
                     setSelectedImage(
-                      "https://media.discordapp.net/attachments/1283830529933840507/1339162088509014048/009.jpg?ex=67adb762&is=67ac65e2&hm=e96afbfe8173416e2ede95146f06ab036b012d801308d9119419dcc7014dcf61&=&format=webp&width=394&height=700"
+                      "/5.webp"
                     );
                     setShowModal(true);
                   }}
-                  src="https://media.discordapp.net/attachments/1283830529933840507/1339162088509014048/009.jpg?ex=67adb762&is=67ac65e2&hm=e96afbfe8173416e2ede95146f06ab036b012d801308d9119419dcc7014dcf61&=&format=webp&width=394&height=700"
+                  src="/5.webp"
                   alt="Image 5"
                 />
               </div>
@@ -183,7 +183,7 @@ export default function ValentineBook() {
                       d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
                     />
                   </svg>
-                  23 Comments
+                  89 Comments
                 </div>
               </div>
             </div>
