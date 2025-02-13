@@ -13,17 +13,22 @@ export default function ValentineMail() {
   const carouselImages = [
     {
       id: "slide1",
-      url: "https://media.discordapp.net/attachments/1283830529933840507/1338767852978700339/77.webp?ex=67ac4839&is=67aaf6b9&hm=e728fad5699d40d5d9e7d181b6bc60083a9465eabed1eb809b8af4eb16ff5e3b&=&format=webp&width=395&height=702",
+      url: "/35.webp",
       alt: "Memory 1",
     },
     {
       id: "slide2",
-      url: "https://media.discordapp.net/attachments/1283830529933840507/1338767852978700339/77.webp?ex=67ac4839&is=67aaf6b9&hm=e728fad5699d40d5d9e7d181b6bc60083a9465eabed1eb809b8af4eb16ff5e3b&=&format=webp&width=395&height=702",
+      url: "/26.webp",
       alt: "Memory 2",
     },
     {
       id: "slide3",
-      url: "https://media.discordapp.net/attachments/1283830529933840507/1338767852978700339/77.webp?ex=67ac4839&is=67aaf6b9&hm=e728fad5699d40d5d9e7d181b6bc60083a9465eabed1eb809b8af4eb16ff5e3b&=&format=webp&width=395&height=702",
+      url: "/24.webp",
+      alt: "Memory 3",
+    },
+    {
+      id: "slide4",
+      url: "/19.webp",
       alt: "Memory 3",
     },
   ];
