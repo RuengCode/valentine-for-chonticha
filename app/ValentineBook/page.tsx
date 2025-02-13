@@ -1116,7 +1116,7 @@ export default function ValentineBook() {
 
             {/* Post Content */}
             <p className="text-sm">
-            Happy Valentine's Day. Love you today and always. 
+            Happy Valentine Day. Love you today and always. 
             </p>
 
             {/* Image Grid */}
