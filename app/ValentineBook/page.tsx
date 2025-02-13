@@ -33,9 +33,8 @@ export default function ValentineBook() {
 
             {/* Post Content */}
             <p className="text-sm">
-              Hypnosis at the parallel universe was the advice of alarm,
-              commanded to a conscious ship. Processors experiment with
-              paralysis!
+            I don't know how you do it but you make me want to live forever. 
+            Wish our love will last forever.💖🤍
             </p>
 
             {/* Image Grid */}
@@ -215,9 +214,8 @@ export default function ValentineBook() {
 
             {/* Post Content */}
             <p className="text-sm">
-              Hypnosis at the parallel universe was the advice of alarm,
-              commanded to a conscious ship. Processors experiment with
-              paralysis!
+            Every time you hold my hand. I find another reason to fall in love with you..
+            Love you always.🤍💏
             </p>
 
             {/* Image Grid */}
@@ -397,9 +395,8 @@ export default function ValentineBook() {
 
             {/* Post Content */}
             <p className="text-sm">
-              Hypnosis at the parallel universe was the advice of alarm,
-              commanded to a conscious ship. Processors experiment with
-              paralysis!
+            The beauty that surrounds me is all because of you. 
+            I found life because I found you💕
             </p>
 
             {/* Image Grid */}
@@ -579,9 +576,7 @@ export default function ValentineBook() {
 
             {/* Post Content */}
             <p className="text-sm">
-              Hypnosis at the parallel universe was the advice of alarm,
-              commanded to a conscious ship. Processors experiment with
-              paralysis!
+            We loved with a love that is more than love. Wish our love will last forever. 
             </p>
 
             {/* Image Grid */}
@@ -761,9 +756,7 @@ export default function ValentineBook() {
 
             {/* Post Content */}
             <p className="text-sm">
-              Hypnosis at the parallel universe was the advice of alarm,
-              commanded to a conscious ship. Processors experiment with
-              paralysis!
+            Every time I see you I fall in love all over again. 
             </p>
 
             {/* Image Grid */}
@@ -943,9 +936,7 @@ export default function ValentineBook() {
 
             {/* Post Content */}
             <p className="text-sm">
-              Hypnosis at the parallel universe was the advice of alarm,
-              commanded to a conscious ship. Processors experiment with
-              paralysis!
+            Even if things get hard someday, I promise to love you just the same.
             </p>
 
             {/* Image Grid */}
@@ -1125,9 +1116,7 @@ export default function ValentineBook() {
 
             {/* Post Content */}
             <p className="text-sm">
-              Hypnosis at the parallel universe was the advice of alarm,
-              commanded to a conscious ship. Processors experiment with
-              paralysis!
+            Happy Valentine's Day. Love you today and always. 
             </p>
 
             {/* Image Grid */}
