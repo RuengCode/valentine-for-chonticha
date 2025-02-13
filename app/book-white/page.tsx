@@ -96,9 +96,9 @@ const handleEditTodo = (index: number, newText?: string) => {
         {todos.map((todo, index) => (
           <div
             key={index}
-            className="card bg-base-300 text-primary-content w-96"
+            className="card bg-base-200 content w-96"
           >
-            <div className="card-body">
+            <div className="card-body ">
             <div className="grid grid-cols-3 gap-4">
             <h2 className="card-title ">XXX</h2>
             <div className="card-title col-start-3 text-xs">{currentTime}</div>
