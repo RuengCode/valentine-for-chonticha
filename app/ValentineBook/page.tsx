@@ -1,3 +1,4 @@
+'use Client'
 import { useState } from "react";
 
 export default function ValentineBook() {
@@ -188,7 +189,7 @@ export default function ValentineBook() {
           </div>
         </div>
       </div>
-      
+    
     </div>
   );
 }
